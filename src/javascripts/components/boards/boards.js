@@ -1,12 +1,13 @@
 import boardData from '../../helpers/boardsData';
 import print from '../../helpers/util';
+import pins from '../pins/pins';
 
 const seePinDiv = (e) => {
   const boardId = e.target.closest('.card').id;
   console.error('button clicked', boardId);
-  console.error(e);
   document.getElementById('boards-page').classList.add('hide');
   document.getElementById('pins-page').classList.remove('hide');
+  pins.initPins(boardId);
 };
 
 const bindEvents = () => {
